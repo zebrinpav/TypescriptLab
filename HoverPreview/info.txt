@@ -1,0 +1,13 @@
+After added type annotations we got error:
+
+error TS2345: Argument of type 'any[]' is not assignable to parameter of type 'number'.
+
+             return showPreview(preview, xPos, startCoords, startCoords);
+
+
+because startCoords = charCoords(cm, startPos)=[x,y,ybot]
+
+
+right version:
+
+return showPreview(preview, xPos, startCoords[1], startCoords[2]);

@@ -1,0 +1,26 @@
+Problem function: onDocClick
+target must be array, not boolean
+when e={originalEvent=false,target=...} function must return void
+
+export var onDocClick = function(e)
+{
+	if (!global.loaded) return;
+
+	var target;
+
+	// Firefox support
+	if (!e.originalEvent)
+	{
+		target = e.originalEvent;
+        return;
+	}
+	else
+	{
+		target = e.target;
+	}
+	if (!target.filter(elem => elem === global._containerBlurred).length)
+	{
+		global.focus();
+		return false;
+	}
+};

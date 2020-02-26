@@ -1,0 +1,12 @@
+Problem:
+pass shape = {
+			view: undefined,
+			...,
+			numerator: ..,
+			denominator: .. }
+in function dropShapeToZone
+
+
+solution:
+
+if (!shape.view) return;
